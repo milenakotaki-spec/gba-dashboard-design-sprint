@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Protótipo GBA Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="logo">GBA</div>
+      <button class="primary">Trazer dinheiro</button>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <div>
+          <p class="label">Saldo principal</p>
+          <h1>R$ 6.794,03</h1>
+          <p class="muted">Disponível para gastar após contas: R$ 1.200,00</p>
+        </div>
+        <div class="hero-actions">
+          <button class="ghost">Pagar</button>
+          <button class="ghost">Transferir</button>
+          <button class="ghost">Guardar</button>
+        </div>
+      </section>
+
+      <section class="tabs">
+        <button class="tab active" data-tab="spend">Gastar</button>
+        <button class="tab" data-tab="save">Guardar</button>
+      </section>
+
+      <section class="panel active" id="spend">
+        <div class="card highlight">
+          <h2>Assistente de contas</h2>
+          <p>Você tem R$ 850,00 em contas chegando.</p>
+          <button class="primary">Separar agora</button>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Caixinha - Contas do mês</h3>
+            <p>R$ 850,00 reservado</p>
+          </div>
+          <div class="card">
+            <h3>Caixinha - Gastos do dia</h3>
+            <p>R$ 350,00</p>
+          </div>
+          <div class="card ghost-box">
+            <h3>Conta externa (fantasma)</h3>
+            <p>R$ 500,00 parados em outro banco</p>
+            <button class="ghost">Trazer para cá</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Resumo do mês</h3>
+          <div class="bar">
+            <div class="bar-in"></div>
+            <div class="bar-out"></div>
+          </div>
+          <p class="muted">Entradas vs. saídas</p>
+        </div>
+
+        <div class="card">
+          <h3>Últimas movimentações</h3>
+          <ul class="list">
+            <li>Pagamento: Internet - R$ 120,00</li>
+            <li>Transferência: Maria - R$ 60,00</li>
+            <li>Entrada: Salário - R$ 4.500,00</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel" id="save">
+        <div class="card highlight">
+          <h2>Rendimento do mês</h2>
+          <p>+ R$ 45,20</p>
+          <button class="primary">Guardar mais</button>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Caixinha - Emergência</h3>
+            <p>Progresso: 70%</p>
+          </div>
+          <div class="card">
+            <h3>Caixinha - Viagem</h3>
+            <p>Progresso: 40%</p>
+          </div>
+          <div class="card">
+            <h3>Meta sugerida</h3>
+            <p>Guardar R$ 50 hoje</p>
+            <button class="ghost">Guardar agora</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Evolução da poupança</h3>
+          <div class="line"></div>
+          <p class="muted">Últimos 6 meses</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
