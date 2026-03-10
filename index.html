@@ -1,108 +1,287 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Protótipo GBA Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>GBA Dashboard</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div class="logo">GBA</div>
-      <button class="primary">Trazer dinheiro</button>
-    </header>
+    <div class="phone-frame">
 
-    <main class="container">
-      <section class="hero">
-        <div>
-          <p class="label">Saldo principal</p>
-          <h1>R$ 6.794,03</h1>
-          <p class="muted">Disponível para gastar após contas: R$ 1.200,00</p>
+      <!-- Status bar -->
+      <div class="status-bar">
+        <span class="status-time">11:08</span>
+        <div class="status-icons">
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
+            <rect x="0" y="3" width="3" height="9" rx="1" fill="#1F1F1F"/>
+            <rect x="4.5" y="2" width="3" height="10" rx="1" fill="#1F1F1F"/>
+            <rect x="9" y="0" width="3" height="12" rx="1" fill="#1F1F1F"/>
+            <rect x="13.5" y="0" width="3" height="12" rx="1" fill="#1F1F1F" opacity="0.3"/>
+          </svg>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
+            <path d="M8 2.4C10.2 2.4 12.2 3.3 13.6 4.8L15 3.3C13.2 1.3 10.7 0 8 0C5.3 0 2.8 1.3 1 3.3L2.4 4.8C3.8 3.3 5.8 2.4 8 2.4Z" fill="#1F1F1F"/>
+            <path d="M8 5C9.5 5 10.8 5.6 11.8 6.6L13.2 5.1C11.8 3.8 10 3 8 3C6 3 4.2 3.8 2.8 5.1L4.2 6.6C5.2 5.6 6.5 5 8 5Z" fill="#1F1F1F"/>
+            <circle cx="8" cy="10" r="2" fill="#1F1F1F"/>
+          </svg>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
+            <rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="#1F1F1F" stroke-opacity="0.35"/>
+            <rect x="2" y="2" width="16" height="8" rx="2" fill="#1F1F1F"/>
+            <path d="M23 4.5V7.5C23.8 7.2 24.5 6.5 24.5 6C24.5 5.5 23.8 4.8 23 4.5Z" fill="#1F1F1F" fill-opacity="0.4"/>
+          </svg>
         </div>
-        <div class="hero-actions">
-          <button class="ghost">Pagar</button>
-          <button class="ghost">Transferir</button>
-          <button class="ghost">Guardar</button>
+      </div>
+
+      <!-- Top navigation -->
+      <nav class="topnav">
+        <button class="icon-btn" aria-label="Back">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1F1F1F"/>
+          </svg>
+        </button>
+        <span class="topnav-title">Account</span>
+        <button class="icon-btn" aria-label="Show balance">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="#1F1F1F"/>
+          </svg>
+        </button>
+      </nav>
+
+      <!-- Scrollable content -->
+      <div class="screen-content">
+
+        <!-- Tabs -->
+        <div class="tabs-row">
+          <button class="tab active" data-tab="spending">Spending</button>
+          <button class="tab" data-tab="savings">Savings</button>
         </div>
-      </section>
 
-      <section class="tabs">
-        <button class="tab active" data-tab="spend">Gastar</button>
-        <button class="tab" data-tab="save">Guardar</button>
-      </section>
+        <!-- SPENDING PANEL -->
+        <div class="panel active" id="spending">
 
-      <section class="panel active" id="spend">
-        <div class="card highlight">
-          <h2>Assistente de contas</h2>
-          <p>Você tem R$ 850,00 em contas chegando.</p>
-          <button class="primary">Separar agora</button>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Caixinha - Contas do mês</h3>
-            <p>R$ 850,00 reservado</p>
+          <!-- Hero balance -->
+          <div class="hero-section">
+            <div class="nu-avatar">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="14" fill="#820AD1"/>
+                <path d="M9 9h3.5l5.5 7V9H21v10h-3.5L12 12v7H9V9z" fill="white"/>
+              </svg>
+            </div>
+            <p class="balance-label">Main balance</p>
+            <h1 class="balance-amount">$300.00</h1>
+            <div class="balance-meta">
+              <span class="yield-positive">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M5 1L9 9H1L5 1Z" fill="#00A868"/>
+                </svg>
+                $10 today
+              </span>
+              <span class="badge-apy">3.50% APY</span>
+            </div>
           </div>
-          <div class="card">
-            <h3>Caixinha - Gastos do dia</h3>
-            <p>R$ 350,00</p>
-          </div>
-          <div class="card ghost-box">
-            <h3>Conta externa (fantasma)</h3>
-            <p>R$ 500,00 parados em outro banco</p>
-            <button class="ghost">Trazer para cá</button>
-          </div>
-        </div>
 
-        <div class="card">
-          <h3>Resumo do mês</h3>
-          <div class="bar">
-            <div class="bar-in"></div>
-            <div class="bar-out"></div>
+          <!-- Set aside card -->
+          <div class="card commitments-card">
+            <div class="commitments-top">
+              <div>
+                <p class="commitments-label">Set aside for commitments</p>
+                <p class="commitments-amount">$650.00</p>
+              </div>
+              <button class="icon-btn-sm" aria-label="Collapse">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M6 13l4-4 4 4" stroke="#820AD1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="commitments-sub">$1,300.00 still needed for March bills</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 33%"></div>
+            </div>
+            <button class="btn-outline">Set aside money</button>
           </div>
-          <p class="muted">Entradas vs. saídas</p>
-        </div>
 
-        <div class="card">
-          <h3>Últimas movimentações</h3>
-          <ul class="list">
-            <li>Pagamento: Internet - R$ 120,00</li>
-            <li>Transferência: Maria - R$ 60,00</li>
-            <li>Entrada: Salário - R$ 4.500,00</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="panel" id="save">
-        <div class="card highlight">
-          <h2>Rendimento do mês</h2>
-          <p>+ R$ 45,20</p>
-          <button class="primary">Guardar mais</button>
-        </div>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Caixinha - Emergência</h3>
-            <p>Progresso: 70%</p>
+          <!-- Quick actions -->
+          <div class="actions-row">
+            <button class="action-btn">
+              <div class="action-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M11 4v14M4 11h14" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span>Bring</span>
+            </button>
+            <button class="action-btn">
+              <div class="action-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M5 11h12M5 7l4 4-4 4M17 7l-4 4 4 4" stroke="#1F1F1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span>Transfer</span>
+            </button>
+            <button class="action-btn">
+              <div class="action-icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                  <path d="M11 18V4M5 10l6-6 6 6" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span>Pay</span>
+            </button>
           </div>
-          <div class="card">
-            <h3>Caixinha - Viagem</h3>
-            <p>Progresso: 40%</p>
-          </div>
-          <div class="card">
-            <h3>Meta sugerida</h3>
-            <p>Guardar R$ 50 hoje</p>
-            <button class="ghost">Guardar agora</button>
-          </div>
-        </div>
 
-        <div class="card">
-          <h3>Evolução da poupança</h3>
-          <div class="line"></div>
-          <p class="muted">Últimos 6 meses</p>
-        </div>
-      </section>
-    </main>
+          <!-- Transactions section -->
+          <div class="section-header">
+            <span class="section-title">Transactions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="vertical-align:middle"><path d="M5 3l4 4-4 4" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round"/></svg></span>
+            <button class="icon-btn-sm" aria-label="Search">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="8.5" cy="8.5" r="5.5" stroke="#1F1F1F" stroke-width="1.5"/>
+                <path d="M13 13l3.5 3.5" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="card transactions-card">
+            <div class="transaction-row">
+              <div class="tx-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect width="20" height="20" rx="10" fill="#F0E6FF"/>
+                  <path d="M10 6v8M6 10h8" stroke="#820AD1" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="tx-info">
+                <p class="tx-name">Payment from Bills set aside</p>
+                <p class="tx-date">11:08 · Mar 17</p>
+              </div>
+              <span class="tx-amount">$ 250.00</span>
+            </div>
+            <div class="tx-divider"></div>
+            <div class="transaction-row">
+              <div class="tx-icon tx-icon-uber">
+                <span style="font-size:11px;font-weight:700;color:#000">Uber</span>
+              </div>
+              <div class="tx-info">
+                <p class="tx-name">Uber</p>
+                <p class="tx-date">11:08 · Mar 17</p>
+              </div>
+              <span class="tx-amount">$ 67.91</span>
+            </div>
+            <div class="tx-divider"></div>
+            <div class="transaction-row">
+              <div class="tx-icon tx-icon-amazon">
+                <span style="font-size:11px;font-weight:700;color:#fff">a</span>
+              </div>
+              <div class="tx-info">
+                <p class="tx-name">Amazon</p>
+                <p class="tx-date">11:08 · Mar 17</p>
+              </div>
+              <span class="tx-amount">$ 79.99</span>
+            </div>
+          </div>
+
+          <!-- More from your balances -->
+          <p class="section-label">More from your balances</p>
+          <div class="balances-grid">
+            <div class="card balance-card">
+              <div class="balance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M3 9l9-6 9 6v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M9 22V12h6v10" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="balance-card-title">Bring your money in seconds</p>
+              <button class="btn-outline-sm">Connect other bank</button>
+            </div>
+            <div class="card balance-card">
+              <div class="balance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <rect x="2" y="5" width="20" height="14" rx="2" stroke="#1F1F1F" stroke-width="1.5"/>
+                  <path d="M2 10h20" stroke="#1F1F1F" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <p class="balance-card-title">Debit cards</p>
+              <p class="balance-card-sub">Manage your cards</p>
+            </div>
+            <div class="card balance-card">
+              <div class="balance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="9" stroke="#1F1F1F" stroke-width="1.5"/>
+                  <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" stroke="#1F1F1F" stroke-width="1.5"/>
+                </svg>
+              </div>
+              <p class="balance-card-title">Other currencies</p>
+              <p class="balance-card-sub">40+ currencies</p>
+            </div>
+            <div class="card balance-card">
+              <div class="balance-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
+                  <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <p class="balance-card-title">Documents</p>
+              <p class="balance-card-sub">Statements, taxes...</p>
+            </div>
+          </div>
+
+        </div><!-- end spending panel -->
+
+        <!-- SAVINGS PANEL -->
+        <div class="panel" id="savings">
+
+          <div class="hero-section">
+            <div class="nu-avatar">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="14" r="14" fill="#820AD1"/>
+                <path d="M9 9h3.5l5.5 7V9H21v10h-3.5L12 12v7H9V9z" fill="white"/>
+              </svg>
+            </div>
+            <p class="balance-label">Savings balance</p>
+            <h1 class="balance-amount">$1,200.00</h1>
+            <div class="balance-meta">
+              <span class="yield-positive">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path d="M5 1L9 9H1L5 1Z" fill="#00A868"/>
+                </svg>
+                $45.20 this month
+              </span>
+              <span class="badge-apy">3.50% APY</span>
+            </div>
+          </div>
+
+          <div class="card commitments-card">
+            <p class="commitments-label">Goal · Emergency fund</p>
+            <p class="commitments-amount">$800.00</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 70%"></div>
+            </div>
+            <p class="commitments-sub">70% complete</p>
+          </div>
+
+          <div class="card commitments-card">
+            <p class="commitments-label">Goal · Trip</p>
+            <p class="commitments-amount">$400.00</p>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 40%"></div>
+            </div>
+            <p class="commitments-sub">40% complete</p>
+          </div>
+
+          <div class="card" style="padding:20px">
+            <p class="section-label" style="margin:0 0 12px">Savings growth</p>
+            <div class="savings-chart">
+              <div class="chart-bar" style="height:40%"></div>
+              <div class="chart-bar" style="height:55%"></div>
+              <div class="chart-bar" style="height:50%"></div>
+              <div class="chart-bar" style="height:65%"></div>
+              <div class="chart-bar" style="height:72%"></div>
+              <div class="chart-bar" style="height:85%"></div>
+            </div>
+            <p class="tx-date" style="margin:8px 0 0">Last 6 months</p>
+          </div>
+
+        </div><!-- end savings panel -->
+
+      </div><!-- end screen-content -->
+    </div><!-- end phone-frame -->
 
     <script src="./app.js"></script>
   </body>
