@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-    <title>GBA Dashboard</title>
+    <title>GBA Dashboard · NuDS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -11,277 +14,312 @@
 
       <!-- Status bar -->
       <div class="status-bar">
-        <span class="status-time">11:08</span>
+        <span class="nu-label-xsmall-strong">11:08</span>
         <div class="status-icons">
-          <svg width="17" height="12" viewBox="0 0 17 12" fill="none">
-            <rect x="0" y="3" width="3" height="9" rx="1" fill="#1F1F1F"/>
-            <rect x="4.5" y="2" width="3" height="10" rx="1" fill="#1F1F1F"/>
-            <rect x="9" y="0" width="3" height="12" rx="1" fill="#1F1F1F"/>
-            <rect x="13.5" y="0" width="3" height="12" rx="1" fill="#1F1F1F" opacity="0.3"/>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="none" aria-hidden="true">
+            <rect x="0" y="3" width="3" height="9" rx="1" fill="var(--nu-content-default)"/>
+            <rect x="4.5" y="2" width="3" height="10" rx="1" fill="var(--nu-content-default)"/>
+            <rect x="9" y="0" width="3" height="12" rx="1" fill="var(--nu-content-default)"/>
+            <rect x="13.5" y="0" width="3" height="12" rx="1" fill="var(--nu-content-default)" opacity="0.3"/>
           </svg>
-          <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
-            <path d="M8 2.4C10.2 2.4 12.2 3.3 13.6 4.8L15 3.3C13.2 1.3 10.7 0 8 0C5.3 0 2.8 1.3 1 3.3L2.4 4.8C3.8 3.3 5.8 2.4 8 2.4Z" fill="#1F1F1F"/>
-            <path d="M8 5C9.5 5 10.8 5.6 11.8 6.6L13.2 5.1C11.8 3.8 10 3 8 3C6 3 4.2 3.8 2.8 5.1L4.2 6.6C5.2 5.6 6.5 5 8 5Z" fill="#1F1F1F"/>
-            <circle cx="8" cy="10" r="2" fill="#1F1F1F"/>
+          <svg width="16" height="12" viewBox="0 0 16 12" fill="none" aria-hidden="true">
+            <path d="M8 2.4C10.2 2.4 12.2 3.3 13.6 4.8L15 3.3C13.2 1.3 10.7 0 8 0C5.3 0 2.8 1.3 1 3.3L2.4 4.8C3.8 3.3 5.8 2.4 8 2.4Z" fill="var(--nu-content-default)"/>
+            <path d="M8 5C9.5 5 10.8 5.6 11.8 6.6L13.2 5.1C11.8 3.8 10 3 8 3C6 3 4.2 3.8 2.8 5.1L4.2 6.6C5.2 5.6 6.5 5 8 5Z" fill="var(--nu-content-default)"/>
+            <circle cx="8" cy="10" r="2" fill="var(--nu-content-default)"/>
           </svg>
-          <svg width="25" height="12" viewBox="0 0 25 12" fill="none">
-            <rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="#1F1F1F" stroke-opacity="0.35"/>
-            <rect x="2" y="2" width="16" height="8" rx="2" fill="#1F1F1F"/>
-            <path d="M23 4.5V7.5C23.8 7.2 24.5 6.5 24.5 6C24.5 5.5 23.8 4.8 23 4.5Z" fill="#1F1F1F" fill-opacity="0.4"/>
+          <svg width="25" height="12" viewBox="0 0 25 12" fill="none" aria-hidden="true">
+            <rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="var(--nu-content-default)" stroke-opacity="0.35"/>
+            <rect x="2" y="2" width="16" height="8" rx="2" fill="var(--nu-content-default)"/>
+            <path d="M23 4.5V7.5C23.8 7.2 24.5 6.5 24.5 6C24.5 5.5 23.8 4.8 23 4.5Z" fill="var(--nu-content-default)" fill-opacity="0.4"/>
           </svg>
         </div>
       </div>
 
       <!-- Top navigation -->
       <nav class="topnav">
-        <button class="icon-btn" aria-label="Back">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="#1F1F1F"/>
+        <!-- Icon Action: arrow_back -->
+        <button class="nu-icon-action" aria-label="Back">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" fill="var(--nu-content-default)"/>
           </svg>
         </button>
-        <span class="topnav-title">Account</span>
-        <button class="icon-btn" aria-label="Show balance">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="#1F1F1F"/>
+        <span class="nu-label-medium-strong">Account</span>
+        <!-- Icon Action: visibility_on -->
+        <button class="nu-icon-action" aria-label="Show balance">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z" fill="var(--nu-content-default)"/>
           </svg>
         </button>
       </nav>
 
-      <!-- Scrollable content -->
+      <!-- Scrollable screen -->
       <div class="screen-content">
 
-        <!-- Tabs -->
-        <div class="tabs-row">
-          <button class="tab active" data-tab="spending">Spending</button>
-          <button class="tab" data-tab="savings">Savings</button>
+        <!-- Tab bar -->
+        <div class="nu-tabs" role="tablist">
+          <button class="nu-tab active" data-tab="spending" role="tab" aria-selected="true">Spending</button>
+          <button class="nu-tab" data-tab="savings" role="tab" aria-selected="false">Savings</button>
         </div>
 
-        <!-- SPENDING PANEL -->
-        <div class="panel active" id="spending">
+        <!-- ── SPENDING PANEL ── -->
+        <div class="panel active" id="spending" role="tabpanel">
 
-          <!-- Hero balance -->
-          <div class="hero-section">
-            <div class="nu-avatar">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <circle cx="14" cy="14" r="14" fill="#820AD1"/>
-                <path d="M9 9h3.5l5.5 7V9H21v10h-3.5L12 12v7H9V9z" fill="white"/>
+          <!-- Hero: Avatar + balance -->
+          <div class="nu-hero">
+            <!-- Avatar: Variant=Logo, Size=Small -->
+            <div class="nu-avatar nu-avatar--logo nu-avatar--sm">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-label="Nubank" aria-hidden="true">
+                <path d="M2 0h4.5l9 12V0H20v16h-4.5L7 4v12H2V0z" fill="white"/>
               </svg>
             </div>
-            <p class="balance-label">Main balance</p>
-            <h1 class="balance-amount">$300.00</h1>
-            <div class="balance-meta">
-              <span class="yield-positive">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M5 1L9 9H1L5 1Z" fill="#00A868"/>
+            <p class="nu-label-small-default" style="color:var(--nu-content-secondary);margin-top:8px">Main balance</p>
+            <h1 class="nu-title-large">$300.00</h1>
+            <div class="nu-balance-meta">
+              <!-- Badge: triangle_up_filled + value -->
+              <span class="nu-badge nu-badge--success">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
+                  <path d="M4 0L8 8H0L4 0Z" fill="currentColor"/>
                 </svg>
                 $10 today
               </span>
-              <span class="badge-apy">3.50% APY</span>
+              <!-- Badge chip -->
+              <span class="nu-chip">3.50% APY</span>
             </div>
           </div>
 
-          <!-- Set aside card -->
-          <div class="card commitments-card">
-            <div class="commitments-top">
+          <!-- Card: Set aside for commitments -->
+          <div class="nu-card nu-card--elevated">
+            <div class="nu-card__row nu-card__row--between">
               <div>
-                <p class="commitments-label">Set aside for commitments</p>
-                <p class="commitments-amount">$650.00</p>
+                <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">Set aside for commitments</p>
+                <p class="nu-title-medium" style="margin-top:4px">$650.00</p>
               </div>
-              <button class="icon-btn-sm" aria-label="Collapse">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M6 13l4-4 4 4" stroke="#820AD1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Icon Action: unfold_less -->
+              <button class="nu-icon-action nu-icon-action--sm" aria-label="Collapse">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M6 13l4-4 4 4M6 7l4 4 4-4" stroke="var(--nu-content-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </button>
             </div>
-            <p class="commitments-sub">$1,300.00 still needed for March bills</p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 33%"></div>
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary);margin-top:6px">$1,300.00 still needed for March bills</p>
+            <!-- Progress bar -->
+            <div class="nu-progress" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+              <div class="nu-progress__fill" style="width:33%"></div>
             </div>
-            <button class="btn-outline">Set aside money</button>
+            <!-- Button: Type=Secondary -->
+            <button class="nu-button nu-button--secondary" style="margin-top:12px">Set aside money</button>
           </div>
 
-          <!-- Quick actions -->
-          <div class="actions-row">
-            <button class="action-btn">
-              <div class="action-icon">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <path d="M11 4v14M4 11h14" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round"/>
+          <!-- Quick action buttons -->
+          <div class="nu-action-bar">
+            <button class="nu-action">
+              <div class="nu-action__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 4v12M4 10h12" stroke="var(--nu-content-default)" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </div>
-              <span>Bring</span>
+              <span class="nu-label-xsmall-default">Bring</span>
             </button>
-            <button class="action-btn">
-              <div class="action-icon">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <path d="M5 11h12M5 7l4 4-4 4M17 7l-4 4 4 4" stroke="#1F1F1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <button class="nu-action">
+              <div class="nu-action__icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12M4 6.5l3.5 3.5L4 13.5M16 6.5l-3.5 3.5L16 13.5" stroke="var(--nu-content-default)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <span>Transfer</span>
+              <span class="nu-label-xsmall-default">Transfer</span>
             </button>
-            <button class="action-btn">
-              <div class="action-icon">
-                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                  <path d="M11 18V4M5 10l6-6 6 6" stroke="#1F1F1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <button class="nu-action">
+              <div class="nu-action__icon">
+                <!-- arrow_up icon -->
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 16V4M4 10l6-6 6 6" stroke="var(--nu-content-default)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <span>Pay</span>
+              <span class="nu-label-xsmall-default">Pay</span>
             </button>
           </div>
 
-          <!-- Transactions section -->
-          <div class="section-header">
-            <span class="section-title">Transactions <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style="vertical-align:middle"><path d="M5 3l4 4-4 4" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-            <button class="icon-btn-sm" aria-label="Search">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="8.5" cy="8.5" r="5.5" stroke="#1F1F1F" stroke-width="1.5"/>
-                <path d="M13 13l3.5 3.5" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Transactions section header -->
+          <div class="nu-section-header">
+            <div style="display:flex;align-items:center;gap:4px">
+              <span class="nu-label-small-strong">Transactions</span>
+              <!-- chevron icon -->
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M5 3l4 4-4 4" stroke="var(--nu-content-default)" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <!-- Icon Action: search -->
+            <button class="nu-icon-action nu-icon-action--sm" aria-label="Search transactions">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="8.5" cy="8.5" r="5" stroke="var(--nu-content-default)" stroke-width="1.5"/>
+                <path d="M13 13l3.5 3.5" stroke="var(--nu-content-default)" stroke-width="1.5" stroke-linecap="round"/>
               </svg>
             </button>
           </div>
 
-          <div class="card transactions-card">
-            <div class="transaction-row">
-              <div class="tx-icon">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect width="20" height="20" rx="10" fill="#F0E6FF"/>
-                  <path d="M10 6v8M6 10h8" stroke="#820AD1" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Transaction Widget List (_BB / Transaction Widget / Transaction List Row) -->
+          <div class="nu-card nu-card--elevated nu-card--flush">
+            <!-- Row 1 -->
+            <div class="nu-tx-row">
+              <!-- Avatar: Variant=Icon, Size=Small -->
+              <div class="nu-avatar nu-avatar--icon nu-avatar--sm" style="background:var(--nu-surface-primary)">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                  <path d="M2 9h14M2 5h14M2 13h14" stroke="var(--nu-content-primary)" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <div class="tx-info">
-                <p class="tx-name">Payment from Bills set aside</p>
-                <p class="tx-date">11:08 · Mar 17</p>
+              <div class="nu-tx-info">
+                <p class="nu-label-small-strong">Payment from Bills set aside</p>
+                <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">11:08 · Mar 17</p>
               </div>
-              <span class="tx-amount">$ 250.00</span>
+              <span class="nu-label-small-default">$ 250.00</span>
             </div>
-            <div class="tx-divider"></div>
-            <div class="transaction-row">
-              <div class="tx-icon tx-icon-uber">
-                <span style="font-size:11px;font-weight:700;color:#000">Uber</span>
+            <div class="nu-divider"></div>
+            <!-- Row 2: Uber -->
+            <div class="nu-tx-row">
+              <div class="nu-avatar nu-avatar--icon nu-avatar--sm" style="background:#000">
+                <span class="nu-label-xsmall-strong" style="color:#fff;font-size:10px">Uber</span>
               </div>
-              <div class="tx-info">
-                <p class="tx-name">Uber</p>
-                <p class="tx-date">11:08 · Mar 17</p>
+              <div class="nu-tx-info">
+                <p class="nu-label-small-strong">Uber</p>
+                <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">11:08 · Mar 17</p>
               </div>
-              <span class="tx-amount">$ 67.91</span>
+              <span class="nu-label-small-default">$ 67.91</span>
             </div>
-            <div class="tx-divider"></div>
-            <div class="transaction-row">
-              <div class="tx-icon tx-icon-amazon">
-                <span style="font-size:11px;font-weight:700;color:#fff">a</span>
+            <div class="nu-divider"></div>
+            <!-- Row 3: Amazon -->
+            <div class="nu-tx-row">
+              <div class="nu-avatar nu-avatar--icon nu-avatar--sm" style="background:#FF9900">
+                <span class="nu-label-xsmall-strong" style="color:#fff;font-size:12px">a</span>
               </div>
-              <div class="tx-info">
-                <p class="tx-name">Amazon</p>
-                <p class="tx-date">11:08 · Mar 17</p>
+              <div class="nu-tx-info">
+                <p class="nu-label-small-strong">Amazon</p>
+                <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">11:08 · Mar 17</p>
               </div>
-              <span class="tx-amount">$ 79.99</span>
+              <span class="nu-label-small-default">$ 79.99</span>
             </div>
           </div>
 
           <!-- More from your balances -->
-          <p class="section-label">More from your balances</p>
-          <div class="balances-grid">
-            <div class="card balance-card">
-              <div class="balance-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M3 9l9-6 9 6v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
-                  <path d="M9 22V12h6v10" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
+          <p class="nu-label-small-strong nu-section-label">More from your balances</p>
+          <div class="nu-grid-2col">
+            <!-- Card: Connect bank (_BB / Widget 2x2) -->
+            <div class="nu-card nu-card--elevated nu-widget">
+              <div class="nu-widget__icon">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M2 8l9-5 9 5v10a2 2 0 01-2 2H4a2 2 0 01-2-2V8z" stroke="var(--nu-content-default)" stroke-width="1.4" stroke-linejoin="round"/>
+                  <path d="M8 20V11h6v9" stroke="var(--nu-content-default)" stroke-width="1.4" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <p class="balance-card-title">Bring your money in seconds</p>
-              <button class="btn-outline-sm">Connect other bank</button>
+              <p class="nu-label-small-strong nu-widget__title">Bring your money in seconds</p>
+              <button class="nu-button nu-button--secondary nu-button--xs">Connect other bank</button>
             </div>
-            <div class="card balance-card">
-              <div class="balance-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <rect x="2" y="5" width="20" height="14" rx="2" stroke="#1F1F1F" stroke-width="1.5"/>
-                  <path d="M2 10h20" stroke="#1F1F1F" stroke-width="1.5"/>
+            <!-- Card: Debit cards -->
+            <div class="nu-card nu-card--elevated nu-widget">
+              <div class="nu-widget__icon">
+                <!-- horizontal_card icon -->
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <rect x="1" y="4" width="20" height="14" rx="2.5" stroke="var(--nu-content-default)" stroke-width="1.4"/>
+                  <path d="M1 9h20" stroke="var(--nu-content-default)" stroke-width="1.4"/>
                 </svg>
               </div>
-              <p class="balance-card-title">Debit cards</p>
-              <p class="balance-card-sub">Manage your cards</p>
+              <p class="nu-label-small-strong nu-widget__title">Debit cards</p>
+              <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">Manage your cards</p>
             </div>
-            <div class="card balance-card">
-              <div class="balance-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="9" stroke="#1F1F1F" stroke-width="1.5"/>
-                  <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20" stroke="#1F1F1F" stroke-width="1.5"/>
+            <!-- Card: Other currencies -->
+            <div class="nu-card nu-card--elevated nu-widget">
+              <div class="nu-widget__icon">
+                <!-- globe icon -->
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <circle cx="11" cy="11" r="9" stroke="var(--nu-content-default)" stroke-width="1.4"/>
+                  <path d="M2 11h18M11 2a14 14 0 010 18M11 2a14 14 0 000 18" stroke="var(--nu-content-default)" stroke-width="1.4"/>
                 </svg>
               </div>
-              <p class="balance-card-title">Other currencies</p>
-              <p class="balance-card-sub">40+ currencies</p>
+              <p class="nu-label-small-strong nu-widget__title">Other currencies</p>
+              <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">40+ currencies</p>
             </div>
-            <div class="card balance-card">
-              <div class="balance-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z" stroke="#1F1F1F" stroke-width="1.5" stroke-linejoin="round"/>
-                  <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#1F1F1F" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Card: Documents -->
+            <div class="nu-card nu-card--elevated nu-widget">
+              <div class="nu-widget__icon">
+                <!-- document icon -->
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+                  <path d="M13 2H5a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V7l-6-5z" stroke="var(--nu-content-default)" stroke-width="1.4" stroke-linejoin="round"/>
+                  <path d="M13 2v5h5M15 12H7M15 16H7M9 8H7" stroke="var(--nu-content-default)" stroke-width="1.4" stroke-linecap="round"/>
                 </svg>
               </div>
-              <p class="balance-card-title">Documents</p>
-              <p class="balance-card-sub">Statements, taxes...</p>
+              <p class="nu-label-small-strong nu-widget__title">Documents</p>
+              <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">Statements, taxes...</p>
             </div>
           </div>
 
-        </div><!-- end spending panel -->
+        </div><!-- /spending panel -->
 
-        <!-- SAVINGS PANEL -->
-        <div class="panel" id="savings">
+        <!-- ── SAVINGS PANEL ── -->
+        <div class="panel" id="savings" role="tabpanel">
 
-          <div class="hero-section">
-            <div class="nu-avatar">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <circle cx="14" cy="14" r="14" fill="#820AD1"/>
-                <path d="M9 9h3.5l5.5 7V9H21v10h-3.5L12 12v7H9V9z" fill="white"/>
+          <div class="nu-hero">
+            <div class="nu-avatar nu-avatar--logo nu-avatar--sm">
+              <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+                <path d="M2 0h4.5l9 12V0H20v16h-4.5L7 4v12H2V0z" fill="white"/>
               </svg>
             </div>
-            <p class="balance-label">Savings balance</p>
-            <h1 class="balance-amount">$1,200.00</h1>
-            <div class="balance-meta">
-              <span class="yield-positive">
-                <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                  <path d="M5 1L9 9H1L5 1Z" fill="#00A868"/>
+            <p class="nu-label-small-default" style="color:var(--nu-content-secondary);margin-top:8px">Savings balance</p>
+            <h1 class="nu-title-large">$1,200.00</h1>
+            <div class="nu-balance-meta">
+              <span class="nu-badge nu-badge--success">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
+                  <path d="M4 0L8 8H0L4 0Z" fill="currentColor"/>
                 </svg>
                 $45.20 this month
               </span>
-              <span class="badge-apy">3.50% APY</span>
+              <span class="nu-chip">3.50% APY</span>
             </div>
           </div>
 
-          <div class="card commitments-card">
-            <p class="commitments-label">Goal · Emergency fund</p>
-            <p class="commitments-amount">$800.00</p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 70%"></div>
+          <!-- Goal card: Emergency -->
+          <div class="nu-card nu-card--elevated">
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">Goal · Emergency fund</p>
+            <p class="nu-title-medium" style="margin-top:4px">$800.00</p>
+            <div class="nu-progress" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+              <div class="nu-progress__fill" style="width:70%"></div>
             </div>
-            <p class="commitments-sub">70% complete</p>
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary);margin-top:4px">70% complete</p>
           </div>
 
-          <div class="card commitments-card">
-            <p class="commitments-label">Goal · Trip</p>
-            <p class="commitments-amount">$400.00</p>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 40%"></div>
+          <!-- Goal card: Trip -->
+          <div class="nu-card nu-card--elevated">
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary)">Goal · Trip</p>
+            <p class="nu-title-medium" style="margin-top:4px">$400.00</p>
+            <div class="nu-progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+              <div class="nu-progress__fill" style="width:40%"></div>
             </div>
-            <p class="commitments-sub">40% complete</p>
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary);margin-top:4px">40% complete</p>
           </div>
 
-          <div class="card" style="padding:20px">
-            <p class="section-label" style="margin:0 0 12px">Savings growth</p>
-            <div class="savings-chart">
-              <div class="chart-bar" style="height:40%"></div>
-              <div class="chart-bar" style="height:55%"></div>
-              <div class="chart-bar" style="height:50%"></div>
-              <div class="chart-bar" style="height:65%"></div>
-              <div class="chart-bar" style="height:72%"></div>
-              <div class="chart-bar" style="height:85%"></div>
+          <!-- Savings growth chart -->
+          <div class="nu-card nu-card--elevated">
+            <p class="nu-label-small-strong" style="margin-bottom:12px">Savings growth</p>
+            <div class="nu-chart">
+              <div class="nu-chart__bar" style="height:38%"></div>
+              <div class="nu-chart__bar" style="height:52%"></div>
+              <div class="nu-chart__bar" style="height:48%"></div>
+              <div class="nu-chart__bar" style="height:64%"></div>
+              <div class="nu-chart__bar" style="height:70%"></div>
+              <div class="nu-chart__bar nu-chart__bar--active" style="height:85%"></div>
             </div>
-            <p class="tx-date" style="margin:8px 0 0">Last 6 months</p>
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary);margin-top:8px">Last 6 months</p>
           </div>
 
-        </div><!-- end savings panel -->
+          <!-- Suggest save action -->
+          <div class="nu-card nu-card--elevated">
+            <p class="nu-label-small-strong">Save $50 today</p>
+            <p class="nu-label-xsmall-default" style="color:var(--nu-content-secondary);margin-top:4px">Quick transfer to your Emergency fund</p>
+            <button class="nu-button nu-button--primary" style="margin-top:12px">Save now</button>
+          </div>
 
-      </div><!-- end screen-content -->
-    </div><!-- end phone-frame -->
+        </div><!-- /savings panel -->
+
+      </div><!-- /screen-content -->
+    </div><!-- /phone-frame -->
 
     <script src="./app.js"></script>
   </body>
